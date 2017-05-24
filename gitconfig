@@ -1,0 +1,17 @@
+[alias]
+	adog = log --all --decorate --oneline --graph
+[core]
+	editor = vim
+[commit]
+	gpgsign = true
+[user]
+	signingKey = 50E315D8
+	email = taylor@hansenfamily.us
+	name = CrazyGuy108
+[gpg]
+	program = gpg2
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
