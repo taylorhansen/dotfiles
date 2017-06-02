@@ -57,5 +57,5 @@ set ai si smarttab
 " wrap lines when over the character limit
 set wrap
 
-" for java files, use 4wide soft tabs
-autocmd Filetype java setlocal softtabstop=4 expandtab shiftwidth=4
+" use 4wide soft tabs
+set softtabstop=4 expandtab shiftwidth=4
