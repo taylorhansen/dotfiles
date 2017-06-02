@@ -59,3 +59,6 @@ set wrap
 
 " use 4wide soft tabs
 set softtabstop=4 expandtab shiftwidth=4
+
+" except for makefiles, which require hard tabs
+autocmd FileType make setlocal noexpandtab
