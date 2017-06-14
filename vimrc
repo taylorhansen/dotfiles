@@ -20,6 +20,8 @@ Plugin 'easymotion/vim-easymotion'
 
 call vundle#end()
 filetype on
+filetype plugin on
+filetype indent on
 
 " use the molokai color scheme
 colorscheme molokai
@@ -50,9 +52,6 @@ set t_Co=256
 set nobackup
 set nowb
 set noswapfile
-
-" auto/smart indent for stuff
-set ai si smarttab
 
 " wrap lines when over the character limit
 set wrap
