@@ -45,6 +45,10 @@ set showmatch
 " syntax highlighting yay
 syntax enable
 
+" various indentation things for c/c++
+set cindent
+set cinoptions=g-1
+
 " enable 256 color palette
 set t_Co=256
 
