@@ -1,7 +1,7 @@
 # creates symlinks to the dotfiles in ~/dotfiles
 dir=~/dotfiles
 olddir=~/dotfiles-old
-files="bashrc vimrc"
+files="bashrc vimrc gitconfig"
 echo "Creating backup dotfiles folder $olddir"
 mkdir -p $olddir
 echo "Creating symlinks for:"
