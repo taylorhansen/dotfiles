@@ -1,4 +1,5 @@
-# creates symlinks to the dotfiles in ~/dotfiles
+#!/usr/bin/env sh
+# creates symlinks to the dotfiles in this folder
 dir=~/dotfiles
 olddir=~/dotfiles-old
 files="bashrc vimrc gitconfig"
