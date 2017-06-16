@@ -45,10 +45,6 @@ set showmatch
 " syntax highlighting yay
 syntax enable
 
-" various indentation things for c/c++
-set cindent
-set cinoptions=g-1
-
 " enable 256 color palette
 set t_Co=256
 
@@ -65,3 +61,7 @@ set softtabstop=4 expandtab shiftwidth=4
 
 " except for makefiles, which require hard tabs
 autocmd FileType make setlocal noexpandtab
+
+" custom indentation settings
+set cindent
+set cinoptions=Ls,:0,l1,g0,N-s,p0,t0,cs,C1,(s
