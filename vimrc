@@ -65,3 +65,6 @@ autocmd FileType make setlocal noexpandtab
 " custom indentation settings
 set cindent
 set cinoptions=Ls,:0,l1,g0,N-s,p0,t0,cs,C1,(s
+
+" show line numbers
+set number
