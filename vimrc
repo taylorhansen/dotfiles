@@ -83,3 +83,7 @@ set cinoptions=Ls,:0,l1,g0,N-s,p0,t0,cs,C1,(s
 
 " show line numbers
 set number
+
+" pressing gt and gT is too hard lets use the actual tab key instead
+nnoremap <Tab> gt
+nnoremap <S-Tab> gT
