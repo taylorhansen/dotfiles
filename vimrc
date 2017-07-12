@@ -87,3 +87,13 @@ set number
 " pressing gt and gT is too hard lets use the actual tab key instead
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
+
+" used for switching between windows in a tab
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+nnoremap <C-Left> <C-w>h
+nnoremap <C-Down> <C-w>j
+nnoremap <C-Up> <C-w>k
+nnoremap <C-Right> <C-w>l
