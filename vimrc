@@ -37,6 +37,9 @@ let g:syntastic_cpp_compiler_options = " -std=c++14 -stdlib=libc++"
 colorscheme molokai
 let g:molokai_original = 1
 
+" make the backspace key work like most other apps
+set backspace=indent,eol,start
+
 " auto read when a file is changed outside of vim
 set autoread
 
