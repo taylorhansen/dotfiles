@@ -10,7 +10,7 @@ call vundle#begin()
 
 " plugins
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'vim-syntastic/syntastic'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'Yggdroot/indentLine'
 Plugin 'tomasr/molokai'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -23,15 +23,9 @@ filetype on
 filetype plugin on
 filetype indent on
 
-" syntastic settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_cpp_compiler = "g++"
-let g:syntastic_cpp_compiler_options = " -std=c++14 -stdlib=libc++"
+" ycm settings
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_extra_conf_vim_data = ['&filetype']
 
 " use the molokai color scheme
 colorscheme molokai
