@@ -11,6 +11,7 @@ call vundle#begin()
 " plugins
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'rdnetto/YCM-Generator'
 Plugin 'Yggdroot/indentLine'
 Plugin 'tomasr/molokai'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -22,10 +23,6 @@ call vundle#end()
 filetype on
 filetype plugin on
 filetype indent on
-
-" ycm settings
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_extra_conf_vim_data = ['&filetype']
 
 " use the molokai color scheme
 colorscheme molokai
