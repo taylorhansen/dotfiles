@@ -89,6 +89,9 @@ set formatoptions+=tcroqj
 " show line numbers
 set number
 
+" things to save when doing :mks
+set sessionoptions=resize,sesdir,tabpages,winsize
+
 " pressing gt and gT is too hard lets use the actual tab key instead
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
