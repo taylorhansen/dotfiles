@@ -92,6 +92,9 @@ set number
 " things to save when doing :mks
 set sessionoptions=resize,sesdir,tabpages,winsize
 
+" always display the really cool statusline from vim-airline
+set laststatus=2
+
 " pressing gt and gT is too hard lets use the actual tab key instead
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
