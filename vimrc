@@ -73,7 +73,7 @@ set wrap
 " highlight in red any text that's over the 80 character limit
 highlight BadText term=underline ctermbg=red ctermfg=white guibg=red
     \ guifg=white
-match BadText /\%81v.\+/
+autocmd FileType c,cpp match BadText /\%81v.\+/
 
 " use 4wide soft tabs
 set softtabstop=4 expandtab shiftwidth=4
