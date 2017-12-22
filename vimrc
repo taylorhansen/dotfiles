@@ -39,6 +39,10 @@ let g:ycm_disable_for_files_larger_than_kb = 0
 colorscheme molokai
 let g:molokai_original = 1
 
+" makes everything smoother when working with large files in multiple windows
+set ttyfast
+set lazyredraw
+
 " make the backspace key work like most other apps
 set backspace=indent,eol,start
 
