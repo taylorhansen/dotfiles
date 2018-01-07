@@ -1,11 +1,20 @@
-" disable vi compatibility mode (must happen first)
+" required for vundle stuff
 set nocompatible
-
-" required for vundle i guess
 filetype off
 
-" set runtime path to include vundle then initialize it
-set rtp+=~/.vim/bundle/Vundle.vim
+" install vundle and plugins if needed
+let install_plugins = 0
+let vundle_path = expand('$HOME/.vim/bundle/Vundle.vim')
+if !isdirectory(vundle_path)
+    echo "Cloning vundle\n"
+    execute 'silent! !mkdir -p ' . vundle_path
+    execute 'silent! !git clone https://github.com/VundleVim/Vundle.vim ' .
+        \ vundle_path
+    let install_plugins = 1
+endif
+
+" initialize vundle
+execute 'set rtp+=' . vundle_path
 call vundle#begin()
 
 " plugins
@@ -21,6 +30,13 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'llvm-mirror/llvm', {'rtp': 'utils/vim/'}
 
 call vundle#end()
+
+if install_plugins
+    PluginInstall
+    " exit the window that PluginInstall creates
+    quit
+endif
+
 filetype on
 filetype plugin on
 filetype indent on
@@ -100,7 +116,7 @@ set sessionoptions=resize,sesdir,tabpages,winsize
 " always display the really cool statusline from vim-airline
 set laststatus=2
 
-" pressing gt and gT is too hard lets use the actual tab key instead
+" pressing gt and gT is too hard, let's use the actual tab key instead
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
 
