@@ -1,4 +1,29 @@
 #!/usr/bin/env sh
+# compiles the vim plugin YouCompleteMe
+# should be run with sudo
+
+echo "Setting up local vim directory"
+cd ~
+mkdir -p .vim
+cd .vim
+mkdir -p bundle
+cd bundle
+
+if cd Vundle.vim
+then
+    echo "Updating Vundle.vim"
+    git pull origin master
+    cd ..
+else
+    echo "Installing Vundle.vim"
+    git clone https://github.com/VundleVim/Vundle.vim
+fi
+
+echo "Installing vim plugins"
 vim +PluginClean +PluginInstall +PluginUpdate +qa
-cd ~/.vim/bundle/YouCompleteMe
+
+echo "Building YCM"
+cd YouCompleteMe
 python3 install.py --all
+
+echo "Done"
