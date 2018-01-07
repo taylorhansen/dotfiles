@@ -9,7 +9,7 @@
 	email = taylor@hansenfamily.us
 	name = CrazyGuy108
 [gpg]
-	program = gpg2
+	program = gpg
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
