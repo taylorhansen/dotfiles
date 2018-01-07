@@ -1,18 +1,23 @@
 #!/usr/bin/env sh
 # creates symlinks to the dotfiles in this folder
-dir=~/dotfiles
+
+# create backup folder
 olddir=~/dotfiles-old
-files="bashrc vimrc gitconfig"
 echo "Creating backup dotfiles folder $olddir"
 mkdir -p $olddir
+
+# make all those symlinks
+dir=~/dotfiles
+files="bashrc vimrc gitconfig"
 echo "Creating symlinks for:"
 cd $dir
 for file in $files
 do
-	echo "$file"
-	if test -f ~/.$file || test -d ~/.$file
+	echo ".$file"
+	if [ -f ~/.$file -o -d ~/.$file ]
 	then
 		mv ~/.$file $olddir/.$file
 	fi
 	ln -s $dir/$file ~/.$file
 done
+echo "Done"
