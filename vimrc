@@ -7,7 +7,7 @@ let install_plugins = 0
 let vundle_path = expand('$HOME/.vim/bundle/Vundle.vim')
 if !isdirectory(vundle_path)
     echo "Cloning vundle\n"
-    execute 'silent! !mkdir -p ' . vundle_path
+    execute 'silent! !mkdir ' . vundle_path
     execute 'silent! !git clone https://github.com/VundleVim/Vundle.vim ' .
         \ vundle_path
     let install_plugins = 1
@@ -31,6 +31,8 @@ Plugin 'llvm-mirror/llvm', {'rtp': 'utils/vim/'}
 
 call vundle#end()
 
+" if vundle was just cloned from github, then the plugins must not have been
+"  installed yet, so do that now to prevent errors
 if install_plugins
     PluginInstall
     " exit the window that PluginInstall creates
@@ -84,9 +86,7 @@ syntax enable
 set t_Co=256
 
 " disable automatic backups since everything's on git these days
-set nobackup
-set nowb
-set noswapfile
+set nobackup nowb noswapfile
 
 " wrap lines when over the character limit
 set wrap

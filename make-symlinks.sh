@@ -8,16 +8,16 @@ mkdir -p $olddir
 
 # make all those symlinks
 dir=~/dotfiles
-files="bashrc vimrc gitconfig"
-echo "Creating symlinks for:"
+files='bashrc vimrc gitconfig'
+echo 'Creating symlinks for:'
 cd $dir
 for file in $files
 do
-	echo ".$file"
+	echo .$file
 	if [ -f ~/.$file -o -d ~/.$file ]
 	then
 		mv ~/.$file $olddir/.$file
 	fi
 	ln -s $dir/$file ~/.$file
 done
-echo "Done"
+echo 'Done making symlinks'
