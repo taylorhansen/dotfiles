@@ -43,6 +43,6 @@ echo '' | vim +qa
 
 echo 'Building YCM:'
 cd $HOME/.vim/bundle/YouCompleteMe
-python3 install.py --all
+sudo python3 install.py --all
 
 echo 'Done'
