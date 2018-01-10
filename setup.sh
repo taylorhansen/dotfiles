@@ -24,7 +24,7 @@ sudo apt update
 llvm_version=5.0
 sudo apt install -y git htop llvm-$llvm_version-dev clang-$llvm_version \
     libclang-$llvm_version-dev sl arc-theme flat-remix gnome-tweak-tool \
-    python-dev python3-dev cmake libz-dev doxygen graphviz
+    python-dev python3-dev cmake libz-dev doxygen graphviz build-essential
 sudo update-alternatives --install /usr/bin/clang clang \
     /usr/bin/clang-$llvm_version 100
 sudo update-alternatives --install /usr/bin/clang++ clang++ \
