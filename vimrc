@@ -57,6 +57,9 @@ let g:ycm_disable_for_files_larger_than_kb = 0
 colorscheme molokai
 let g:molokai_original = 1
 
+" enable use of the mouse
+set mouse=a
+
 " makes everything smoother when working with large files in multiple windows
 set ttyfast
 set lazyredraw
