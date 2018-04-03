@@ -21,3 +21,5 @@
 	default = simple
 [pull]
 	rebase = preserve
+[rerere]
+	enabled = true
