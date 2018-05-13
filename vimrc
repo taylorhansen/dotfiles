@@ -28,6 +28,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'llvm-mirror/llvm', {'rtp': 'utils/vim/'}
+Plugin 'leafgarland/typescript-vim'
 
 call vundle#end()
 
@@ -56,6 +57,9 @@ let g:ycm_disable_for_files_larger_than_kb = 0
 " use the molokai color scheme
 colorscheme molokai
 let g:molokai_original = 1
+
+" typescript-vim settings
+let g:typescript_indent_disable = 1
 
 " enable use of the mouse
 set mouse=a
