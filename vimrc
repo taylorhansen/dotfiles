@@ -54,11 +54,17 @@ let g:ycm_key_list_select_completion = ['<Tab>']
 let g:ycm_key_list_previous_completion = ['<S-Tab>']
 let g:ycm_disable_for_files_larger_than_kb = 0
 
-" use the molokai color scheme
+" theme settings
+set t_Co=256
 colorscheme molokai
 let g:molokai_original = 1
+set conceallevel=1
+set concealcursor=inc
 
-" typescript-vim settings
+" render json as js so the quotes aren't hidden
+autocmd BufNewFile,BufRead *.json set filetype=javascript
+
+" override typescript-vim indentation with my own settings
 let g:typescript_indent_disable = 1
 
 " enable use of the mouse
@@ -88,9 +94,6 @@ set showmatch
 
 " syntax highlighting yay
 syntax enable
-
-" enable 256 color palette
-set t_Co=256
 
 " disable automatic backups since everything's on git these days
 set nobackup nowb noswapfile
