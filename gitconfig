@@ -1,5 +1,6 @@
 [alias]
 	adog = log --all --decorate --oneline --graph
+	dog = log --decorate --oneline --graph
 [core]
 	editor = vim
 [commit]
@@ -10,14 +11,14 @@
 	name = CrazyGuy108
 [gpg]
 	program = gpg
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
 [credential]
 	helper = cache --timeout 7200
 [push]
 	default = simple
 [pull]
 	rebase = preserve
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
