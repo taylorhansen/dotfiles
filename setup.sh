@@ -14,7 +14,6 @@ if [ "$(lsb_release -d | cut -f2)" != "$distro" ]
 then
     echo "Error: not using $distro"
     read -p "Are you sure you want to continue? [y/N] " response
-    # FIXME: still works if press enter
     if [[ ! $response = y* ]]
     then
         exit
@@ -26,8 +25,10 @@ fi
 
 # llvm and clang
 install_llvm=true
-# dev resources like git, python, etc.
+# dev resources like git, python, vim, etc.
 install_dev=true
+# wine/mono
+install_wine=true
 # themes and other misc customizations
 install_theme=true
 
@@ -35,26 +36,28 @@ echo
 echo 'Adding repositories'
 echo
 
+# enable 32bit if needed
+sudo dpkg --add-architecture i386
+
 repos=
 
 if [ $install_llvm -o $install_dev ]
 then
-    repos="$repos ubuntu-toolchain-r/test"
+    sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+fi
+
+if [ $install_wine ]
+then
+    # need add winehq's key first
+    wget -q -O - https://dl.winehq.org/wine-builds/Release.key | sudo apt-key add -
+    sudo apt-add-repository -y https://dl.winehq.org/wine-builds/ubuntu/
 fi
 
 if [ $install_theme ]
 then
-    repos="$repos daniruiz/flat-remix"
+    sudo add-apt-repository -y ppa:daniruiz/flat-remix
 fi
 
-# add repositories if not already added
-for repo in $repos
-do
-    if ! grep -q "^deb .*$repo" /etc/apt/sources.list /etc/apt/sources.list.d/*
-    then
-        sudo add-apt-repository -y ppa:$repo
-    fi
-done
 sudo apt update
 
 echo
@@ -67,13 +70,18 @@ if [ $install_llvm ]
 then
     llvm_version=6.0
     to_install="$to_install llvm-$llvm_version-dev clang-$llvm_version \
-        libclang-$llvm_version"
+        libclang-$llvm_version-dev"
 fi
 
 if [ $install_dev ]
 then
     to_install="$to_install git subversion python-dev python3-dev cmake \
         libz-dev doxygen graphviz build-essential golang"
+fi
+
+if [ $install_wine ]
+then
+    to_install="$to_install winehq-devel mono-complete"
 fi
 
 if [ $install_theme ]
