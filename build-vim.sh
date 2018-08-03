@@ -22,7 +22,8 @@ echo 'Building vim from source'
 ./configure --with-features=huge --enable-multibyte --enable-pythoninterp=yes \
     --enable-python3interp=yes --enable-cscope --prefix=/usr/local
 # use parallelism to speed it up
-make -j4
+$num_cores="$(grep -c ^processor /proc/cpuinfo)"
+make -j$num_cores
 
 echo 'Installing vim'
 sudo make install
