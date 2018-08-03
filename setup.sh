@@ -73,7 +73,7 @@ fi
 if [ $install_dev ]
 then
     to_install="$to_install git subversion python-dev python3-dev cmake \
-        libz-dev doxygen graphviz build-essential"
+        libz-dev doxygen graphviz build-essential golang"
 fi
 
 if [ $install_theme ]
