@@ -9,7 +9,7 @@ fi
 
 # you probably shouldn't execute this on other linux distros
 # but if you really want to, just hit y
-distro='Ubuntu 18.04.1'
+distro='Ubuntu 18.04.1 LTS'
 if [ "$(lsb_release -d | cut -f2)" != "$distro" ]
 then
     echo "Error: not using $distro"
