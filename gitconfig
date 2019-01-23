@@ -2,6 +2,9 @@
 	cf = config
 	cfg = config --global
 	f = fetch -a
+	b = branch
+	co = checkout
+	cof = checkout -f
 	pl = pull
 	s = status
 	d = diff
@@ -11,8 +14,7 @@
 	dog = log --decorate --oneline --graph
 	p = push
 	pf = push -f
-	co = checkout
-	cof = checkout -f
+	m = merge
 	r = reset
 	rh = reset --hard
 	rb = rebase
