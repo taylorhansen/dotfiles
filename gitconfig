@@ -18,6 +18,7 @@
 	r = reset
 	rh = reset --hard
 	rb = rebase
+	rp = remote prune origin
 [core]
 	editor = vim
 [commit]
