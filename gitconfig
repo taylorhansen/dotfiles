@@ -5,14 +5,14 @@
 	b = branch
 	co = checkout
 	cof = checkout -f
-	pl = pull
+	pl = pull origin
 	s = status
 	d = diff
 	a = add
 	c = commit
 	adog = log --all --decorate --oneline --graph
 	dog = log --decorate --oneline --graph
-	p = push
+	p = push origin
 	pf = push -f
 	m = merge
 	r = reset
