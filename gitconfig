@@ -13,8 +13,10 @@
 	adog = log --all --decorate --oneline --graph
 	dog = log --decorate --oneline --graph
 	p = push
+	pd = push --delete
 	pf = push -f
 	m = merge
+	ms = merge --squash
 	r = reset
 	rh = reset --hard
 	rb = rebase
