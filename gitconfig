@@ -1,4 +1,5 @@
 [alias]
+	i = init
 	cf = config
 	cfg = config --global
 	f = fetch -a
