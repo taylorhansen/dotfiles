@@ -1,4 +1,5 @@
 [alias]
+	h = help
 	cl = clone
 	i = init
 	cf = config
