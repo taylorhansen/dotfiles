@@ -24,6 +24,8 @@
 	rh = reset --hard
 	rb = rebase
 	rpo = remote prune origin
+	st = stash push
+	stp = stash pop
 [core]
 	editor = vim
 [commit]
