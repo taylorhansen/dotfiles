@@ -8,7 +8,7 @@
 	co = checkout
 	cof = checkout -f
 	pl = pull
-	s = status
+	s = status -sb
 	d = diff
 	a = add
 	c = commit
