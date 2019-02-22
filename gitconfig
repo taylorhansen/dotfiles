@@ -1,4 +1,5 @@
 [alias]
+	cl = clone
 	i = init
 	cf = config
 	cfg = config --global
