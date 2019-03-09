@@ -95,7 +95,5 @@ if ! shopt -oq posix; then
   fi
 fi
 
-source ~/anaconda3/etc/profile.d/conda.sh
-
 export NVM_DIR="/home/taylor/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
