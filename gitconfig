@@ -26,6 +26,7 @@
 	rpo = remote prune origin
 	st = stash push
 	stp = stash pop
+	stl = stash list --oneline
 [core]
 	editor = vim
 [commit]
