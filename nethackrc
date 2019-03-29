@@ -1,53 +1,56 @@
-# most of these settings are not owned by me
-
 ## basic stuff
 
-OPTIONS=showexp,showscore,showrace,time
-OPTIONS=msg_window:reverse,msghistory:1000
-OPTIONS=lit_corridor,color
-OPTIONS=!sparkle
-OPTIONS=runmode:teleport,!rest_on_space
-OPTIONS=boulder:0
-OPTIONS=scores:10 top/3 around/own
-OPTIONS=pickup_burden:unencumbered
-OPTIONS=use_darkgray,showborn,hp_monitor,sortloot:loot,paranoid_hit,paranoid_quit
+# more HUD info
+OPTIONS=showexp,showscore,time
 
-# turn ghosts and shades into 'X' - great with telepathy for bones detection
-# turn ] mimics into 'm'
-OPTIONS=monsters:abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@X'&;:~m
-# make floating eyes easier to see (pun intended)
-MONSTERCOLOR=floating eye:lightgreen
+# can use mouse to look at a tile
+OPTIONS=clicklook
+
+# use inventory interface for commands that require an item
+OPTIONS=force_invmenu
+
+# message history (^P)
+OPTIONS=msg_window:reverse,msghistory:1000
+
+# colors
+OPTIONS=use_darkgray,lit_corridor,color
+
+# don't show movement steps but multi-turn actions
+OPTIONS=runmode:teleport
+
+# prevent space from wasting a turn
+OPTIONS=!rest_on_space
+
+# scoreboard options
+OPTIONS=scores:10 top/3 around/own
+
+# use traditional inventory layout
+OPTIONS=sortloot:none
+
+# confirmation for risky things
+OPTIONS=paranoid_confirmation:attack pray Remove
+
+# easier to see boulders
+OPTIONS=boulder:0
+
+# dogs can carry heavier things than cats
+OPTIONS=pettype:dog
+OPTIONS=hilite_pet
+
+# distinguish piles of items with singular ones
+OPTIONS=hilite_pile
+
+# display ghosts as X instead of space
+# turn ] mimics into m so i don't run into them so much
+SYMBOLS=S_ghost:X,S_mimic_def:m
 
 # use ~ for water/lava to distinguish from fountains
-OPTIONS=dungeon: |--------||.-|++##.##<><>_|\\#{~.~..## #}
-
-# stuff not in vanilla follows
-OPTIONS=showscore
-OPTIONS=sortloot:full
-OPTIONS=showborn
-OPTIONS=use_darkgray
-OPTIONS=paranoid_remove
-OPTIONS=paranoid_hit
-OPTIONS=hilite_hidden_stairs
-
-## status bar colors
-
-OPTIONS=statuscolors
-
-STATUSCOLOR=HP%99:green,HP%75:brown,HP%50:red,HP%25:orange
-#  prayer threshold (<= 1/7 of maxHP) (stth++)
-STATUSCOLOR=HP%14:lightmagenta&inverse
-
-STATUSCOLOR=Pw%99:cyan&bold,Pw%75:cyan,Pw%50:magenta,Pw%25:magenta&bold
-
-STATUSCOLOR=Satiated:green,Hungry:brown,Weak:red,Fainting:orange&inverse,Fainted:orange&inverse,Starved:orange&inverse
-STATUSCOLOR=Burdened:orange,Stressed:orange,Strained:orange,Overtaxed:orange,Overloaded:orange
-STATUSCOLOR=Blind:red,Stun:brown,Conf:brown,Hallu:brown
-STATUSCOLOR=Ill:red&inverse,FoodPois:red&inverse,Slime:red&inverse
+SYMBOLS=S_pool:~,S_water:~,S_lava:~
 
 ## require a prompt for near-death emergencies and other important stuff
 
-OPTIONS=msgtype_regex
+# supported in NAO but not on my machine
+#OPTIONS=msgtype_regex
 
 # emergencies
 MSGTYPE=stop "The (couatl.*eel|kraken) swings itself around you!"
@@ -109,13 +112,12 @@ MSGTYPE=stop ", all your powers will be lost..."
 MSGTYPE=stop "You hear the wailing of the Banshee..."
 MSGTYPE=stop " is about to die."
 
-
-## menu colors
+## menu color
 
 OPTIONS=menucolors
 
 # buc item status
-#uncomment next line if priest (don't normally see uncursed explicitly)
+# uncomment next line if priest (don't normally see uncursed explicitly)
 #MENUCOLOR="^[a-zA-Z$] - "=white
 MENUCOLOR=" !C"=white
 MENUCOLOR=" !B"=white
@@ -142,10 +144,12 @@ MENUCOLOR=" potions? called water named (unholy|cursed|C)($| )"=orange
 # vegan conduct
 MENUCOLOR="(food |cram |K-|C-)ration|gunyoki"=green&bold
 MENUCOLOR="lembas wafer|melon|carrot|tins? .* spinach"=green&bold
-MENUCOLOR=" oranges?( named.*)?$"=green&bold # avoid coloring orange DSM
-MENUCOLOR=" pears?( named.*)?$"=green&bold # avoid coloring pearl rings
+# avoid coloring orange DSM
+MENUCOLOR=" oranges?( named.*)?$"=green&bold
+# avoid coloring pearl rings
+MENUCOLOR=" pears?( named.*)?$"=green&bold
 MENUCOLOR=" (apple|banana|kelp|eucalyptus|garlic|wolfsbane)"=green&bold
-MENUCOLOR=" (slime mold|brain)"=green&bold  ## YOUR FRUIT HERE
+MENUCOLOR=" (slime mold)"=green&bold
 MENUCOLOR="(tins? of )?(gelatinous cube|acid blob|quivering blob)( corpse)?"=green&bold
 MENUCOLOR="(tins? of )?(blue|spotted|ochre) jelly( corpse)?"=green&bold
 MENUCOLOR="(tins? of )?lichen|shrieker|violet fungus|(brown|yellow|green|red) mold( corpse)?"=green&bold
@@ -165,7 +169,8 @@ MENUCOLOR=" gain level"=magenta
 MENUCOLOR=" full healing"=magenta
 MENUCOLOR=" magic marker"=magenta
 MENUCOLOR=" magic lamp|lamp .* magic"=magenta
-MENUCOLOR=" unicorn horn[^[]*$"=magenta #this doesn't color the #enhance unicorn
+# this doesn't color the #enhance unicorn
+MENUCOLOR=" unicorn horn[^[]*$"=magenta
 MENUCOLOR=" tinning kit"=magenta
 MENUCOLOR=" ring .* regen(eration)?($| )"=magenta
 MENUCOLOR=" ring .* conflict"=magenta
@@ -208,11 +213,11 @@ MENUCOLOR=" (Heart of Ahriman|Staff of Aesculapius|Eyes of the Overworld|Platinu
 MENUCOLOR=" (Grimtooth|Orcrist|Sting|Stormbringer)"=lightgreen
 MENUCOLOR=" (Longbow of Diana|Master Key of Thievery)"=lightgreen
 
-#invocation items
+# invocation items
 MENUCOLOR=" (Bell of Opening|silver bell|Candelabrum of Invocation|candelabrum|Book of the Dead|papyrus spellbook)"=magenta&bold
 
-#raison d'etre
-MENUCOLOR=" Amulet of Yendor named"=magenta&bold&underline
+# very important items
+MENUCOLOR=" Amulet of Yendor named"=magenta&underline
 
 # very bad items
 MENUCOLOR=" cursed.* bag .* holding"=red&bold
@@ -250,18 +255,18 @@ MENUCOLOR=" 7[6-9]%"=orange
 MENUCOLOR=" 8[0-9]%"=orange
 MENUCOLOR=" 9[0-9]%"=red
 
-# forgotten spells 
+# forgotten spells
 MENUCOLOR="[a-zA-Z ]+ [0-9]\*   [a-z]+ +[0-9]+%"=magenta
 
 # enhance
 # normal
-MENUCOLOR="^ +[a-z -]+ +\[(Unskilled|Basic|Skilled|Expert|Master|Grand Master)\]$"=none
+MENUCOLOR="^ +[a-z -]+ +\[(Unskilled|Basic|Skilled|Expert|Master|Grand Master)\]$"=white
 # ready to enhance
-MENUCOLOR="^ *[a-z] - +[a-z -]+ +\[(Unskilled|Basic|Skilled|Expert|Master|Grand Master)\]$"=white
+MENUCOLOR="^ *[a-z] - +[a-z -]+ +\[(Unskilled|Basic|Skilled|Expert|Master|Grand Master)\]$"=white&underline
 # enhanceable with more skill slots
-MENUCOLOR="^ +\* +[a-z -]+ +\[(Unskilled|Basic|Skilled|Expert|Master|Grand Master)\]$"=white
+MENUCOLOR="^ +\* +[a-z -]+ +\[(Unskilled|Basic|Skilled|Expert|Master|Grand Master)\]$"=green
 # enhanceable with more potential
-MENUCOLOR="^ +# +[a-z -]+ +\[(Unskilled|Basic|Skilled|Expert|Master|Grand Master)\]$"=none
+MENUCOLOR="^ +# +[a-z -]+ +\[(Unskilled|Basic|Skilled|Expert|Master|Grand Master)\]$"=blue
 
 # force colors
 MENUCOLOR="\{R\}"=red
@@ -278,49 +283,56 @@ MENUCOLOR="\{g\}"=lightgreen
 MENUCOLOR="\{b\}"=lightblue
 MENUCOLOR="\{[mp]\}"=lightmagenta
 MENUCOLOR="\{c\}"=lightcyan
-MENUCOLOR="\{N\}"=none
-MENUCOLOR="\{X\}"=bold
-MENUCOLOR="\{x\}"=dim
-MENUCOLOR="\{U\}"=underline
-MENUCOLOR="\{I\}"=inverse
-MENUCOLOR="\{K\}"=blink
+MENUCOLOR="\{N\}"=white
+MENUCOLOR="\{X\}"=white&bold
+MENUCOLOR="\{x\}"=white&dim
+MENUCOLOR="\{U\}"=white&underline
+MENUCOLOR="\{I\}"=white&inverse
+MENUCOLOR="\{K\}"=white&blink
 
 # fix accidentally highlighted items
-MENUCOLOR=" is empty. Do what?"=none
-MENUCOLOR="Put something into .*"=none
-MENUCOLOR="Take something out of .*"=none
-MENUCOLOR="unicorn horn.*(Unskilled|Basic|Skilled|Expert)"=none
-MENUCOLOR="Info on what a given key does."=none
-MENUCOLOR="Full list of keyboard commands."=none
-MENUCOLOR="altkeyhandler"=none
-MENUCOLOR="fruit.*\["=none
+MENUCOLOR=" is empty. Do what?"=white
+MENUCOLOR="Put something into .*"=white
+MENUCOLOR="Take something out of .*"=white
+MENUCOLOR="unicorn horn.*(Unskilled|Basic|Skilled|Expert)"=white
+MENUCOLOR="Info on what a given key does."=white
+MENUCOLOR="Full list of keyboard commands."=white
+MENUCOLOR="altkeyhandler"=white
+MENUCOLOR="fruit.*\["=white
 
-## autopickup exceptions
+## pickup
 
-# autopickup items that have [,] in their name
-autopickup_exception="<* named *[,]*"
-autopickup_exception="<* called *[,]*"
+# toggle with @
+OPTIONS=autopickup
+# should confirm pickup if about to be burdened
+OPTIONS=pickup_burden:U
+# pickup gold, scrols, potions, and wands
+OPTIONS=pickup_types:$?!/
+# pickup thrown objects
+OPTIONS=pickup_thrown
 
-# never autopickup items that have [!,] in their name
-autopickup_exception="* named *[!,]*"
-autopickup_exception="* called *[!,]*"
+# avoid turning scaremonster scrolls to dust
+AUTOPICKUP_EXCEPTION=">scroll of scare monster"
+AUTOPICKUP_EXCEPTION=">scroll called scare"
+
+# don't pickup empty wands
+AUTOPICKUP_EXCEPTION=">:0)"
+AUTOPICKUP_EXCEPTION="> named empty"
 
 # don't pick up id'd junk
-autopickup_exception="* named* empty*"
-autopickup_exception="* named* crap*"
-autopickup_exception="* named* junk*"
-autopickup_exception="* named* worthless*"
+autopickup_exception="> named* empty*"
+autopickup_exception="> named* junk*"
 
 # may wanna pickup food but never corpses
-autopickup_exception="* corpse*"
+autopickup_exception="> corpse*"
 
 # pickup really good items
-autopickup_exception="<*magic marker*"
-autopickup_exception="<*magic lamp*"
-autopickup_exception="<*lamp called magic"
-autopickup_exception="<*silver bell*"
-autopickup_exception="<*Bell of Opening*"
-autopickup_exception="<*candelabrum*"
-autopickup_exception="<*Candelabrum*"
-autopickup_exception="<*Book of the Dead*"
-autopickup_exception="<*papyrus spellbook*"
+autopickup_exception="<magic marker*"
+autopickup_exception="<magic lamp*"
+autopickup_exception="<lamp called magic"
+autopickup_exception="<silver bell*"
+autopickup_exception="<Bell of Opening*"
+autopickup_exception="<candelabrum*"
+autopickup_exception="<Candelabrum*"
+autopickup_exception="<Book of the Dead*"
+autopickup_exception="<papyrus spellbook*"
