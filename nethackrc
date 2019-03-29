@@ -305,7 +305,7 @@ MENUCOLOR="fruit.*\["=white
 # toggle with @
 OPTIONS=autopickup
 # should confirm pickup if about to be burdened
-OPTIONS=pickup_burden:U
+OPTIONS=pickup_burden:B
 # pickup gold, scrols, potions, and wands
 OPTIONS=pickup_types:$?!/
 # pickup thrown objects
