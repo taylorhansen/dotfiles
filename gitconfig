@@ -11,6 +11,7 @@
 	pl = pull
 	s = status -sb
 	d = diff
+	ds = diff --staged
 	a = add
 	c = commit
 	adog = log --all --decorate --oneline --graph
