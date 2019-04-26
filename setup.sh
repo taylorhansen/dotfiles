@@ -81,7 +81,7 @@ fi
 
 if [ $install_wine ]
 then
-    to_install="$to_install winehq-devel mono-complete"
+    to_install="$to_install winehq-staging mono-complete"
 fi
 
 if [ $install_theme ]
