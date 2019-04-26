@@ -114,7 +114,7 @@ then
     dconf write /org/gnome/desktop/interface/enable-animations "true"
     dconf write /org/gnome/desktop/interface/gtk-theme "'Arc-Darker'"
     dconf write /org/gnome/desktop/interface/cursor-theme "'DMZ-White'"
-    dconf write /org/gnome/desktop/interface/icon-theme "'Flat-Remix-Dark'"
+    dconf write /org/gnome/desktop/interface/icon-theme "'Flat-Remix-Blue-Dark'"
 
     echo 'Changing terminal colors to cooler ones'
     # need to figure out what terminal profile we're using
