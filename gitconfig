@@ -32,6 +32,7 @@
 	editor = vim
 [commit]
 	gpgsign = true
+	verbose = true
 [user]
 	signingKey = 50E315D8
 	email = taylor@hansenfamily.us
