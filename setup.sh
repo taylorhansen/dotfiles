@@ -122,8 +122,8 @@ then
             sed "s/'//g")
     prefix="/org/gnome/terminal/legacy/profiles:/:$profile"
     dconf write $prefix/use-theme-colors 'false'
-    dconf write $prefix/foreground-color "'rgb(235,219,178)'"
-    dconf write $prefix/background-color "'rgb(40,40,40)'"
+    dconf write $prefix/foreground-color "'rgb(235,219,178)'" # EBDBB2
+    dconf write $prefix/background-color "'rgb(40,40,40)'" # 282828
 
     echo 'Swapping caps lock with escape'
     dconf write /org/gnome/desktop/input-sources/xkb-options \
