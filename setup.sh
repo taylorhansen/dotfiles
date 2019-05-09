@@ -49,7 +49,7 @@ fi
 if [ $install_wine ]
 then
     # need add winehq's key first
-    wget -q -O - https://dl.winehq.org/wine-builds/Release.key | sudo apt-key add -
+    wget -q -O - https://dl.winehq.org/wine-builds/winehq.key | sudo apt-key add -
     sudo apt-add-repository -y https://dl.winehq.org/wine-builds/ubuntu/
 fi
 
