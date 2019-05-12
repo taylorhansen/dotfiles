@@ -6,6 +6,9 @@
 echo 'Removing current installation of vim'
 sudo apt remove -y gvim* vim*
 
+echo 'Installing dependencies'
+sudo apt install build-essential ncurses-dev golang python-dev python3-dev
+
 cd $HOME
 if cd vim
 then
@@ -28,7 +31,9 @@ make -j$num_cores
 echo 'Installing vim'
 sudo make install
 sudo update-alternatives --install /usr/bin/editor editor /usr/local/bin/vim 100
+sudo update-alternatives --set editor /usr/local/bin/vim
 sudo update-alternatives --install /usr/bin/vi vi /usr/local/bin/vim 100
+sudo update-alternatives --set vi /usr/local/bin/vim
 
 echo 'Installing vim plugins'
 # remove vim home directory
