@@ -19,8 +19,6 @@ call vundle#begin()
 
 " plugins
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'rdnetto/YCM-Generator'
 Plugin 'Yggdroot/indentLine'
 Plugin 'tomasr/molokai'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -43,16 +41,6 @@ endif
 filetype on
 filetype plugin on
 filetype indent on
-
-" ycm settings
-let g:ycm_min_num_of_chars_for_completion = 1
-let g:ycm_error_symbol = 'X'
-let g:ycm_warning_symbol = '!'
-let g:ycm_complete_in_comments = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_key_list_select_completion = ['<Tab>']
-let g:ycm_key_list_previous_completion = ['<S-Tab>']
-let g:ycm_disable_for_files_larger_than_kb = 0
 
 " theme settings
 set t_Co=256
