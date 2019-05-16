@@ -97,3 +97,6 @@ fi
 
 export NVM_DIR="/home/taylor/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# run a script from package.json
+nr () { npm run "$@"; }
