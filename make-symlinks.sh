@@ -12,7 +12,7 @@ typeset -A file_locs=( \
 [bashrc]=~ \
 [bash_aliases]=~ \
 [gitconfig]=~ \
-[nethackrc]="$HOME/snap/nethack/67" \
+[nethackrc]=~ \
 [npmrc]=~ \
 [vimrc]=~ )
 
@@ -21,11 +21,23 @@ cd $dir
 for file in ${!file_locs[@]}
 do
     loc=${file_locs[$file]}
-    echo ".$file in $loc"
-    if [ -f $loc/.$file -o -d $loc/.$file ]
+
+    # make sure the directory exists
+    if [ -d $loc ]
     then
-        mv $loc/.$file $olddir/.$file
+        echo "- .$file in $loc"
+
+        # move old dotfile to backup folder
+        if [ -f $loc/.$file ]
+        then
+            mv $loc/.$file $olddir/.$file
+        fi
+
+        # link dotfile location to this repository's dotfile
+        ln -sf $dir/$file $loc/.$file
+    else
+        # $loc doesn't exist
+        echo "- .$file in $loc (error: doesn't exist)"
     fi
-    ln -s $dir/$file $loc/.$file
 done
 echo 'Done making symlinks'

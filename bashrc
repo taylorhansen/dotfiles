@@ -103,3 +103,6 @@ nr () { npm run "$@"; }
 
 # add locally-installed npm packages to path
 export PATH="$HOME/.npm/bin:$PATH"
+
+# set nethackrc location
+export NETHACKOPTIONS=@$HOME/.nethackrc
