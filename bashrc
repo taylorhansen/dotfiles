@@ -100,3 +100,6 @@ export NVM_DIR="/home/taylor/.nvm"
 
 # run a script from package.json
 nr () { npm run "$@"; }
+
+# add locally-installed npm packages to path
+export PATH="$HOME/.npm/bin:$PATH"

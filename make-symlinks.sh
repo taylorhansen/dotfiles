@@ -13,6 +13,7 @@ typeset -A file_locs=( \
 [bash_aliases]=~ \
 [gitconfig]=~ \
 [nethackrc]="$HOME/snap/nethack/67" \
+[npmrc]=~ \
 [vimrc]=~ )
 
 echo 'Creating symlinks for:'
