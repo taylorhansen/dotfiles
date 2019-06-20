@@ -106,3 +106,6 @@ export PATH="$HOME/.npm/bin:$PATH"
 
 # set nethackrc location
 export NETHACKOPTIONS=@$HOME/.nethackrc
+
+# added by travis gem
+[ -f /home/taylor/.travis/travis.sh ] && source /home/taylor/.travis/travis.sh
