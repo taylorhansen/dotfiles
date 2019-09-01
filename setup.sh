@@ -134,6 +134,11 @@ then
         echo 'Enabling sudo insults'
         sudo sed -i '$aDefaults\tinsults' /etc/sudoers
     fi
+
+    # disable clock seconds to prevent high cpu usage with high refresh rate
+    #  monitors
+    # https://askubuntu.com/a/1071199/733050
+    gsettings set org.gnome.desktop.interface clock-show-seconds false
 fi
 
 # create dotfile symlinks
