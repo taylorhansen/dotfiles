@@ -29,6 +29,7 @@
 	st = stash
 	stp = stash pop
 	stl = stash list --oneline
+	tasks = grep -EI "TODO|FIXME"
 [core]
 	editor = vim
 [commit]
