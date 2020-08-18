@@ -47,8 +47,4 @@ fi
 # throwing this newline into stdin makes it skip that prompt
 echo '' | vim +qa
 
-echo 'Building YCM:'
-cd $HOME/.vim/bundle/YouCompleteMe
-sudo python3 install.py --all
-
-echo 'Done'
+echo Done. Existing terminals may need to run \'hash -r\' to find the new vim binary.
