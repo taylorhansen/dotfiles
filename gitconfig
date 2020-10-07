@@ -2,6 +2,7 @@
 	h = help
 	cl = clone
 	i = init
+	chp = cherry-pick
 	cf = config
 	cfg = config --global
 	f = fetch -a
@@ -24,12 +25,13 @@
 	r = reset
 	rh = reset --hard
 	rb = rebase
+	rbi = rebase -i
 	rpo = remote prune origin
 	sm = submodule
 	st = stash
 	stp = stash pop
 	stl = stash list --oneline
-	tasks = grep -nEI "TODO|FIXME"
+	todos = grep -nEI "TODO|FIXME"
 [core]
 	editor = vim
 [commit]
