@@ -1,3 +1,0 @@
-#!/usr/bin/env sh
-
-./dell-bios-fan-control/dell-bios-fan-control 0
