@@ -1,6 +1,5 @@
 # Dotfiles
-These are my important dotfiles so I can restore them whenever my computer breaks or something.
-It also contains random scripts that I found helpful to me.
+Dotfile configs and scripts that I found useful while programming.
 
 ## License
 MIT.
