@@ -80,7 +80,7 @@ set hlsearch incsearch ignorecase
 " show matching brackets/parens/etc when the cursor is over them
 set showmatch
 
-" syntax highlighting yay
+" syntax highlighting
 syntax enable
 
 " disable automatic backups since everything's on git these days
@@ -114,11 +114,11 @@ set sessionoptions=resize,sesdir,tabpages,winsize
 " always display the really cool statusline from vim-airline
 set laststatus=2
 
-" pressing gt and gT is too hard, let's use the actual tab key instead
+" use the tab key to switch between tabs
 nnoremap <Tab> gt
 nnoremap <S-Tab> gT
 
-" used for switching between windows in a tab
+" easier key combination for switching between windows
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
