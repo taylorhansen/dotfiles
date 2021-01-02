@@ -48,7 +48,7 @@
 [push]
 	default = simple
 [pull]
-	rebase = preserve
+	rebase = merges
 [filter "lfs"]
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
