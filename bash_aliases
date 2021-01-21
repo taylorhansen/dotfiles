@@ -8,3 +8,6 @@ __git_complete g __git_main
 
 # shortened npm command
 alias nr='npm run'
+
+# shortened radian command
+alias r=radian
